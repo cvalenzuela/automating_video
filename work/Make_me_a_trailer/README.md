@@ -2,6 +2,12 @@
 
 Generate a movie trailer based on other movie trailers.
 
+Generated Trailers:
+
+[Action Movie](https://youtu.be/gCDcsX4-P4M)
+[~~Romance Movie~~]()
+[~~Horror Movie~~]()
+
 ## Install
 
 ```bash
@@ -12,27 +18,26 @@ pip install -r requirements.txt
 
 ### 1. Using a list of videos
 
-Providing a file with Youtube links that will be used as the source:
-
 ```bash
 python main.py --videos videos.txt
 ```
 
-The `txt` file should look like:
+The `.txt` file should look like:
 
-`video_urls_demo.txt`:
+`videos.txt`:
 ```bash
 https://www.youtube.com/watch?v=nW7ImhXMrl8
 https://www.youtube.com/watch?v=1z0RaFiQo0g
+[more links]
 ```
 
 ### 2. With a search term
 
-This will query Youtube for a search term use that as the source videos.
-
 ```bash
 python main.py --q 'action movie trailer' --max 25
 ```
+
+This will query youtube for videos using that search term.
 
 ## Usage
 
