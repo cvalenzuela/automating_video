@@ -8,11 +8,9 @@ Generate a movie trailer based on other movie trailers.
 pip install -r requirements.txt
 ```
 
-## Create a Trailer
+## Create a Trailer
 
-This script can be runned in two ways:
-
-1. Using a list of videos
+### 1. Using a list of videos
 
 Providing a file with Youtube links that will be used as the source:
 
@@ -28,7 +26,7 @@ https://www.youtube.com/watch?v=nW7ImhXMrl8
 https://www.youtube.com/watch?v=1z0RaFiQo0g
 ```
 
-2. With a search term
+### 2. With a search term
 
 This will query Youtube for a search term use that as the source videos.
 
