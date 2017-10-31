@@ -4,9 +4,9 @@ Generate a movie trailer based on other movie trailers.
 
 Generated Trailers:
 
-[Action Movie](https://youtu.be/gCDcsX4-P4M)
-[~~Romance Movie~~]()
-[~~Horror Movie~~]()
+- [Action Movie](https://youtu.be/gCDcsX4-P4M)
+- [~~Romance Movie~~]()
+- [~~Horror Movie~~]()
 
 ## Install
 
