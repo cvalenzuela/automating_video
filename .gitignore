@@ -1,2 +1,4 @@
 *.mp4
 *.mkv
+VideoGrep.app/
+__pycache__
