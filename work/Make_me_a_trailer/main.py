@@ -71,15 +71,17 @@ def make_video(options):
       clips = []
       video = mp.VideoFileClip(TEMP_PATH + video_src)
 
-      while end < int(video.duration):
-        clip = video.subclip(start, end).resize((900,800))
-        #clip = video.subclip(start, end)
-        clips.append(clip)
-        start = start + duration
-        end = end + duration
+      # just use videos that are 3 min or less
+      if(video.duration < 180):
+        while end < int(video.duration):
+          clip = video.subclip(start, end).resize((600,400))
+          #clip = video.subclip(start, end)
+          clips.append(clip)
+          start = start + duration
+          end = end + duration
 
-      all_clips.append(clips)
-      print('Got {} clips for {}'.format(len(clips), video_src))
+        all_clips.append(clips)
+        print('Got {} clips for {}'.format(len(clips), video_src))
 
   # get random clips to form the final movie
   final_clips = []
