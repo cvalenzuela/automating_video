@@ -8,4 +8,4 @@ Assignments and materials for Sam Lavigne's [Automating Video Class](https://git
 ## Utils
 
 - Using videos with spanish subtitles: [Instructions](SPANISH.md)
-- Get a word count of a transcript run `get_dict.py`git 
+- To get a word count of a transcript run: `get_dict.py`
