@@ -14,13 +14,17 @@ import requests
 import subprocess
 import time
 import numpy as np
-from os import path, makedirs
+from os import path, makedirs, remove
+import datetime
+
+now = str(datetime.datetime.now())[20:-1]
 
 # Paths
 VIDEO_PATH = './VIDEOS/'
 NO_CONTROL_CAMERAS_PATH = VIDEO_PATH + 'NO_CONTROL/'
 CONTROL_CAMERAS_PATH = VIDEO_PATH + 'CONTROL/'
 
+TIME_TO_RECORD = '00:00:50'
 TAGS = set()
 
 def init(args):
@@ -36,7 +40,6 @@ def init(args):
     makedirs(CONTROL_CAMERAS_PATH)
 
   # get the tags
-
   for camera in cameras["no_control"]:
     for tag in camera["tags"]:
       TAGS.add(tag)
@@ -44,24 +47,47 @@ def init(args):
   for camera in cameras["control"]:
     for tag in camera["tags"]:
       TAGS.add(tag)
-  print(len(TAGS))
-  get_videos(args)
+
+  if not path.isfile('tags.txt'):
+    with open('tags.txt', 'xt') as f:
+      f.write(', '.join(TAGS))
+      f.close()
   
+ 
 def get_videos(args):
   '''
   Download videos
+  ** Watch out for this, its memory instensive **
   '''
-  # for camera in cameras["no_control"][:10]:
-  #   print(camera)
-  #ip = camera["ip"]
-  ip = '100.38.83.153:8081'
-  video_path = NO_CONTROL_CAMERAS_PATH + ip + '.mp4'
-  record(ip, video_path, '00:00:45', False, '15')
+  # Change the type/amount of camera to use here
+  for camera in cameras["control"][10:20]:
+    ip = camera["ip"]
+    print('getting', ip)
+
+    # name for the video that has its tags
+    video_name = ip
+    for tag in camera["tags"]:
+      video_name = video_name + ',' +  tag
+    video_path = CONTROL_CAMERAS_PATH + video_name + '.mp4'
+
+    # record the video
+    record(ip, video_path, TIME_TO_RECORD, False, '15')
+
+def get_one(args):
+  '''
+  Download just one defined IP video
+  '''
+  IP = '131.229.212.29'
+  video_path = NO_CONTROL_CAMERAS_PATH + IP + '.mp4'
+  record(IP, video_path, TIME_TO_RECORD, False, '20')
 
 if __name__ == "__main__":
   parser = argparse.ArgumentParser(description='Make me a trailer please. With big fries, diet coke.')
   parser.add_argument('--q', type=str, help='The query string to search for videos')
   args = parser.parse_args()
-  init(args)
+  
+  init(args) # init
+  get_videos(args)# download videos
+  #get_one(args) # get one specific video
 
 
