@@ -23,8 +23,9 @@ now = str(datetime.datetime.now())[20:-1]
 VIDEO_PATH = './VIDEOS/'
 NO_CONTROL_CAMERAS_PATH = VIDEO_PATH + 'NO_CONTROL/'
 CONTROL_CAMERAS_PATH = VIDEO_PATH + 'CONTROL/'
+HAND_PICK_PATH = VIDEO_PATH + 'HANDPICK/'
 
-TIME_TO_RECORD = '00:00:50'
+TIME_TO_RECORD = '00:00:10'
 TAGS = set()
 
 def init(args):
@@ -77,8 +78,8 @@ def get_one(args):
   '''
   Download just one defined IP video
   '''
-  IP = '131.229.212.29'
-  video_path = NO_CONTROL_CAMERAS_PATH + IP + '.mp4'
+  IP = '182.253.78.11:84' # 
+  video_path = HAND_PICK_PATH + IP + '.mp4'
   record(IP, video_path, TIME_TO_RECORD, False, '20')
 
 if __name__ == "__main__":
@@ -86,8 +87,8 @@ if __name__ == "__main__":
   parser.add_argument('--q', type=str, help='The query string to search for videos')
   args = parser.parse_args()
   
-  init(args) # init
-  get_videos(args)# download videos
-  #get_one(args) # get one specific video
+  #init(args) # init
+  #get_videos(args)# download videos
+  get_one(args) # get one specific video
 
 

@@ -15,11 +15,13 @@ PATH = getcwd()
 COMPOSITION_PATH = PATH + '/compositions/'
 NO_CONTROL_VIDEOS_PATH = PATH + '/VIDEOS/NO_CONTROL/'
 CONTROL_VIDEOS_PATH = PATH + '/VIDEOS/CONTROL/'
+HAND_PICK_PATH = PATH + '/VIDEOS/HANDPICK/'
+GRID_PATH = PATH + '/VIDEOS/GRID/'
 now = datetime.datetime.now()
 
 # PARAMETERS TO CHANGE
 TOPICS = ['all']
-DURATION = 120
+DURATION = 8
 CLIP_DURATION = 2
 # END OF PARAMETERS
 
@@ -29,6 +31,8 @@ possible_videos = set()
 composition_clips = []
 no_control_videos = [f for f in listdir(NO_CONTROL_VIDEOS_PATH) if isfile(join(NO_CONTROL_VIDEOS_PATH, f)) and '.mp4' in f]
 control_videos = [f for f in listdir(CONTROL_VIDEOS_PATH) if isfile(join(CONTROL_VIDEOS_PATH, f)) and '.mp4' in f]
+handpick_videos = [f for f in listdir(HAND_PICK_PATH) if isfile(join(HAND_PICK_PATH, f)) and '.mp4' in f]
+grid_videos = [f for f in listdir(GRID_PATH) if isfile(join(GRID_PATH, f)) and '.mp4' in f]
 open_videos = set()
 
 def config(options):
@@ -41,7 +45,7 @@ def config(options):
 
   # make a map of tags -> videos
   # ie: {'shop': ['181.58.119.179,shop,mall.mp4'], 'car': ['181.58.119.179,house,car.mp4'],
-  for name in no_control_videos:
+  for name in handpick_videos:
     tags = name.split(',')
     tags.pop(0) # remove the ip
     tags[-1] = tags[-1].split('.')[0] # from the last tag, get rid of the .mp4 extension
@@ -52,7 +56,6 @@ def config(options):
         else:
           tags_to_videos[tag] = [name]
 
-
   # make a map of video -> clips only for the selected tags
   # ie: {'181.58.119.179,shop,mall.mp4': [<clip0>,<clip1>]}
   for topic in TOPICS:
@@ -61,11 +64,12 @@ def config(options):
         for video_name in tags_to_videos[tag]:
           if video_name not in open_videos:
             print('Getting clips from {}...'.format(video_name))
+            print(video_name)
             start = 0
             duration = CLIP_DURATION
             end = start + duration
             clips = []
-            video = mp.VideoFileClip(NO_CONTROL_VIDEOS_PATH + video_name)
+            video = mp.VideoFileClip(HAND_PICK_PATH + video_name)
             open_videos.add(video_name)
             while end < int(video.duration):
               clip = video.subclip(start, end).resize((600,400)) #clip = video.subclip(start, end)
@@ -85,7 +89,7 @@ def config(options):
             duration = CLIP_DURATION
             end = start + duration
             clips = []
-            video = mp.VideoFileClip(NO_CONTROL_VIDEOS_PATH + video_name)
+            video = mp.VideoFileClip(HAND_PICK_PATH + video_name)
             open_videos.add(video_name)
             while end < int(video.duration):
               clip = video.subclip(start, end).resize((600,400)) #clip = video.subclip(start, end)
@@ -106,7 +110,7 @@ def config(options):
       if topic in tags_to_videos:
         for video in tags_to_videos[topic]:
           possible_videos.add(video)
-          
+  
 def make_composition():
   '''
   Make a simple composition of videos
@@ -139,15 +143,17 @@ def make_grid():
   #Load clip
   clips = []
 
-  for name in no_control_videos:
-    clip = mp.VideoFileClip(NO_CONTROL_VIDEOS_PATH + name).subclip(0,30)
+  for name in grid_videos:
+    clip = mp.VideoFileClip(GRID_PATH + name).subclip(0,10)
     clip = clip.resize((600,400))
     clips.append(clip)
 
   clips_list = []
   #Build clips list
   for i in range(ROWS*ROWS):
+    print('Got new video...')
     video = choice(clips)
+    clips.remove(video)
     new_clip = video.set_start(0)
     clips_list.append(new_clip)
 		
@@ -182,6 +188,6 @@ if __name__ == "__main__":
   parser = argparse.ArgumentParser(description='Make a composition with ip videos')
   parser.add_argument('--q', type=str, help='The query string to search for videos')
   args = parser.parse_args()
-  #config(args)
+  config(args)
   #make_composition() 
   make_grid()
