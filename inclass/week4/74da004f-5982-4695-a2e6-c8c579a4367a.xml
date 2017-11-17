@@ -1,0 +1,804 @@
+<mlt LC_NUMERIC="en_US.UTF-8" title="color:#fc8274" version="6.5.0">
+  <profile colorspace="709" description="automatic" display_aspect_den="960" display_aspect_num="1280" frame_rate_den="1" frame_rate_num="20" height="960" progressive="1" sample_aspect_den="1" sample_aspect_num="1" width="1280" />
+  <producer id="producer0" in="0" out="289">
+    <property name="eof">pause</property>
+    <property name="resource">#fc8274</property>
+    <property name="aspect_ratio">1</property>
+    <property name="mlt_service">color</property>
+  </producer>
+  <playlist id="playlist0">
+    <entry in="0" out="289" producer="producer0" />
+  </playlist>
+  <producer id="producer1" in=":0.000000" out="199">
+    <property name="length">200</property>
+    <property name="eof">pause</property>
+    <property name="resource">69.144.129.52,demo.mp4</property>
+    <property name="meta.media.nb_streams">1</property>
+    <property name="meta.media.0.stream.type">video</property>
+    <property name="meta.media.0.stream.frame_rate">20</property>
+    <property name="meta.media.0.stream.sample_aspect_ratio">1</property>
+    <property name="meta.media.0.codec.width">1280</property>
+    <property name="meta.media.0.codec.height">960</property>
+    <property name="meta.media.0.codec.rotate">0</property>
+    <property name="meta.media.0.codec.frame_rate">20</property>
+    <property name="meta.media.0.codec.pix_fmt">yuvj420p</property>
+    <property name="meta.media.0.codec.sample_aspect_ratio">1</property>
+    <property name="meta.media.0.codec.colorspace">709</property>
+    <property name="meta.media.0.codec.name">h264</property>
+    <property name="meta.media.0.codec.long_name">H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10</property>
+    <property name="meta.media.0.codec.bit_rate">3350697</property>
+    <property name="meta.attr.0.stream.handler_name.markup">VideoHandler</property>
+    <property name="meta.attr.major_brand.markup">isom</property>
+    <property name="meta.attr.minor_version.markup">512</property>
+    <property name="meta.attr.compatible_brands.markup">isomiso2avc1mp41</property>
+    <property name="meta.attr.encoder.markup">Lavf57.56.101</property>
+    <property name="seekable">1</property>
+    <property name="meta.media.sample_aspect_num">1</property>
+    <property name="meta.media.sample_aspect_den">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="audio_index">-1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">1</property>
+    <property name="mlt_service">avformat</property>
+  </producer>
+  <playlist id="playlist1">
+    <entry in="0" out="199" producer="producer1" />
+    <filter id="filter0">
+      <property name="version">0.3</property>
+      <property name="mlt_service">frei0r.bluescreen0r</property>
+      <property name="1">0.15</property>
+      <property name="0">#A0A0A0</property>
+    </filter>
+    <filter id="filter1">
+      <property name="background">colour:0</property>
+      <property name="mlt_service">affine</property>
+      <property name="transition.distort">0</property>
+      <property name="transition.valign">middle</property>
+      <property name="transition.halign">center</property>
+      <property name="transition.fill">0</property>
+      <property name="transition.geometry">0/0:100%x100%</property>
+    </filter>
+    <filter id="filter2">
+      <property name="start">1</property>
+      <property name="mlt_service">brightness</property>
+      <property name="opacity">0=0;:0.200000=1</property>
+      <property name="alpha">0=0;:0.200000=1</property>
+    </filter>
+    <filter id="filter3">
+      <property name="start">1</property>
+      <property name="mlt_service">brightness</property>
+      <property name="opacity">:-0.200000=1;-1=0</property>
+      <property name="alpha">:-0.200000=1;-1=0</property>
+    </filter>
+  </playlist>
+  <producer id="producer2" in=":0.000000" out="199">
+    <property name="length">200</property>
+    <property name="eof">pause</property>
+    <property name="resource">69.144.129.52,demo.mp4</property>
+    <property name="meta.media.nb_streams">1</property>
+    <property name="meta.media.0.stream.type">video</property>
+    <property name="meta.media.0.stream.frame_rate">20</property>
+    <property name="meta.media.0.stream.sample_aspect_ratio">1</property>
+    <property name="meta.media.0.codec.width">1280</property>
+    <property name="meta.media.0.codec.height">960</property>
+    <property name="meta.media.0.codec.rotate">0</property>
+    <property name="meta.media.0.codec.frame_rate">20</property>
+    <property name="meta.media.0.codec.pix_fmt">yuvj420p</property>
+    <property name="meta.media.0.codec.sample_aspect_ratio">1</property>
+    <property name="meta.media.0.codec.colorspace">709</property>
+    <property name="meta.media.0.codec.name">h264</property>
+    <property name="meta.media.0.codec.long_name">H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10</property>
+    <property name="meta.media.0.codec.bit_rate">3350697</property>
+    <property name="meta.attr.0.stream.handler_name.markup">VideoHandler</property>
+    <property name="meta.attr.major_brand.markup">isom</property>
+    <property name="meta.attr.minor_version.markup">512</property>
+    <property name="meta.attr.compatible_brands.markup">isomiso2avc1mp41</property>
+    <property name="meta.attr.encoder.markup">Lavf57.56.101</property>
+    <property name="seekable">1</property>
+    <property name="meta.media.sample_aspect_num">1</property>
+    <property name="meta.media.sample_aspect_den">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="audio_index">-1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">1</property>
+    <property name="mlt_service">avformat</property>
+  </producer>
+  <playlist id="playlist2">
+    <blank length="10" />
+    <entry in="0" out="199" producer="producer2" />
+    <filter id="filter4" in=":0.500000">
+      <property name="version">0.3</property>
+      <property name="mlt_service">frei0r.bluescreen0r</property>
+      <property name="1">0.15</property>
+      <property name="0">#A0A0A0</property>
+    </filter>
+    <filter id="filter5" in=":0.500000">
+      <property name="background">colour:0</property>
+      <property name="mlt_service">affine</property>
+      <property name="transition.distort">0</property>
+      <property name="transition.valign">middle</property>
+      <property name="transition.halign">center</property>
+      <property name="transition.fill">0</property>
+      <property name="transition.geometry">0/10:100%x100%</property>
+    </filter>
+    <filter id="filter6" in=":0.500000">
+      <property name="start">1</property>
+      <property name="mlt_service">brightness</property>
+      <property name="opacity">0=0;:0.200000=1</property>
+      <property name="alpha">0=0;:0.200000=1</property>
+    </filter>
+    <filter id="filter7" in=":0.500000">
+      <property name="start">1</property>
+      <property name="mlt_service">brightness</property>
+      <property name="opacity">:-0.200000=1;-1=0</property>
+      <property name="alpha">:-0.200000=1;-1=0</property>
+    </filter>
+  </playlist>
+  <producer id="producer3" in=":0.000000" out="199">
+    <property name="length">200</property>
+    <property name="eof">pause</property>
+    <property name="resource">69.144.129.52,demo.mp4</property>
+    <property name="meta.media.nb_streams">1</property>
+    <property name="meta.media.0.stream.type">video</property>
+    <property name="meta.media.0.stream.frame_rate">20</property>
+    <property name="meta.media.0.stream.sample_aspect_ratio">1</property>
+    <property name="meta.media.0.codec.width">1280</property>
+    <property name="meta.media.0.codec.height">960</property>
+    <property name="meta.media.0.codec.rotate">0</property>
+    <property name="meta.media.0.codec.frame_rate">20</property>
+    <property name="meta.media.0.codec.pix_fmt">yuvj420p</property>
+    <property name="meta.media.0.codec.sample_aspect_ratio">1</property>
+    <property name="meta.media.0.codec.colorspace">709</property>
+    <property name="meta.media.0.codec.name">h264</property>
+    <property name="meta.media.0.codec.long_name">H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10</property>
+    <property name="meta.media.0.codec.bit_rate">3350697</property>
+    <property name="meta.attr.0.stream.handler_name.markup">VideoHandler</property>
+    <property name="meta.attr.major_brand.markup">isom</property>
+    <property name="meta.attr.minor_version.markup">512</property>
+    <property name="meta.attr.compatible_brands.markup">isomiso2avc1mp41</property>
+    <property name="meta.attr.encoder.markup">Lavf57.56.101</property>
+    <property name="seekable">1</property>
+    <property name="meta.media.sample_aspect_num">1</property>
+    <property name="meta.media.sample_aspect_den">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="audio_index">-1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">1</property>
+    <property name="mlt_service">avformat</property>
+  </producer>
+  <playlist id="playlist3">
+    <blank length="20" />
+    <entry in="0" out="199" producer="producer3" />
+    <filter id="filter8" in=":1.000000">
+      <property name="version">0.3</property>
+      <property name="mlt_service">frei0r.bluescreen0r</property>
+      <property name="1">0.15</property>
+      <property name="0">#A0A0A0</property>
+    </filter>
+    <filter id="filter9" in=":1.000000">
+      <property name="background">colour:0</property>
+      <property name="mlt_service">affine</property>
+      <property name="transition.distort">0</property>
+      <property name="transition.valign">middle</property>
+      <property name="transition.halign">center</property>
+      <property name="transition.fill">0</property>
+      <property name="transition.geometry">0/20:100%x100%</property>
+    </filter>
+    <filter id="filter10" in=":1.000000">
+      <property name="start">1</property>
+      <property name="mlt_service">brightness</property>
+      <property name="opacity">0=0;:0.200000=1</property>
+      <property name="alpha">0=0;:0.200000=1</property>
+    </filter>
+    <filter id="filter11" in=":1.000000">
+      <property name="start">1</property>
+      <property name="mlt_service">brightness</property>
+      <property name="opacity">:-0.200000=1;-1=0</property>
+      <property name="alpha">:-0.200000=1;-1=0</property>
+    </filter>
+  </playlist>
+  <producer id="producer4" in=":0.000000" out="199">
+    <property name="length">200</property>
+    <property name="eof">pause</property>
+    <property name="resource">69.144.129.52,demo.mp4</property>
+    <property name="meta.media.nb_streams">1</property>
+    <property name="meta.media.0.stream.type">video</property>
+    <property name="meta.media.0.stream.frame_rate">20</property>
+    <property name="meta.media.0.stream.sample_aspect_ratio">1</property>
+    <property name="meta.media.0.codec.width">1280</property>
+    <property name="meta.media.0.codec.height">960</property>
+    <property name="meta.media.0.codec.rotate">0</property>
+    <property name="meta.media.0.codec.frame_rate">20</property>
+    <property name="meta.media.0.codec.pix_fmt">yuvj420p</property>
+    <property name="meta.media.0.codec.sample_aspect_ratio">1</property>
+    <property name="meta.media.0.codec.colorspace">709</property>
+    <property name="meta.media.0.codec.name">h264</property>
+    <property name="meta.media.0.codec.long_name">H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10</property>
+    <property name="meta.media.0.codec.bit_rate">3350697</property>
+    <property name="meta.attr.0.stream.handler_name.markup">VideoHandler</property>
+    <property name="meta.attr.major_brand.markup">isom</property>
+    <property name="meta.attr.minor_version.markup">512</property>
+    <property name="meta.attr.compatible_brands.markup">isomiso2avc1mp41</property>
+    <property name="meta.attr.encoder.markup">Lavf57.56.101</property>
+    <property name="seekable">1</property>
+    <property name="meta.media.sample_aspect_num">1</property>
+    <property name="meta.media.sample_aspect_den">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="audio_index">-1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">1</property>
+    <property name="mlt_service">avformat</property>
+  </producer>
+  <playlist id="playlist4">
+    <blank length="30" />
+    <entry in="0" out="199" producer="producer4" />
+    <filter id="filter12" in=":1.500000">
+      <property name="version">0.3</property>
+      <property name="mlt_service">frei0r.bluescreen0r</property>
+      <property name="1">0.15</property>
+      <property name="0">#A0A0A0</property>
+    </filter>
+    <filter id="filter13" in=":1.500000">
+      <property name="background">colour:0</property>
+      <property name="mlt_service">affine</property>
+      <property name="transition.distort">0</property>
+      <property name="transition.valign">middle</property>
+      <property name="transition.halign">center</property>
+      <property name="transition.fill">0</property>
+      <property name="transition.geometry">0/30:100%x100%</property>
+    </filter>
+    <filter id="filter14" in=":1.500000">
+      <property name="start">1</property>
+      <property name="mlt_service">brightness</property>
+      <property name="opacity">0=0;:0.200000=1</property>
+      <property name="alpha">0=0;:0.200000=1</property>
+    </filter>
+    <filter id="filter15" in=":1.500000">
+      <property name="start">1</property>
+      <property name="mlt_service">brightness</property>
+      <property name="opacity">:-0.200000=1;-1=0</property>
+      <property name="alpha">:-0.200000=1;-1=0</property>
+    </filter>
+  </playlist>
+  <producer id="producer5" in=":0.000000" out="199">
+    <property name="length">200</property>
+    <property name="eof">pause</property>
+    <property name="resource">69.144.129.52,demo.mp4</property>
+    <property name="meta.media.nb_streams">1</property>
+    <property name="meta.media.0.stream.type">video</property>
+    <property name="meta.media.0.stream.frame_rate">20</property>
+    <property name="meta.media.0.stream.sample_aspect_ratio">1</property>
+    <property name="meta.media.0.codec.width">1280</property>
+    <property name="meta.media.0.codec.height">960</property>
+    <property name="meta.media.0.codec.rotate">0</property>
+    <property name="meta.media.0.codec.frame_rate">20</property>
+    <property name="meta.media.0.codec.pix_fmt">yuvj420p</property>
+    <property name="meta.media.0.codec.sample_aspect_ratio">1</property>
+    <property name="meta.media.0.codec.colorspace">709</property>
+    <property name="meta.media.0.codec.name">h264</property>
+    <property name="meta.media.0.codec.long_name">H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10</property>
+    <property name="meta.media.0.codec.bit_rate">3350697</property>
+    <property name="meta.attr.0.stream.handler_name.markup">VideoHandler</property>
+    <property name="meta.attr.major_brand.markup">isom</property>
+    <property name="meta.attr.minor_version.markup">512</property>
+    <property name="meta.attr.compatible_brands.markup">isomiso2avc1mp41</property>
+    <property name="meta.attr.encoder.markup">Lavf57.56.101</property>
+    <property name="seekable">1</property>
+    <property name="meta.media.sample_aspect_num">1</property>
+    <property name="meta.media.sample_aspect_den">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="audio_index">-1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">1</property>
+    <property name="mlt_service">avformat</property>
+  </producer>
+  <playlist id="playlist5">
+    <blank length="40" />
+    <entry in="0" out="199" producer="producer5" />
+    <filter id="filter16" in=":2.000000">
+      <property name="version">0.3</property>
+      <property name="mlt_service">frei0r.bluescreen0r</property>
+      <property name="1">0.15</property>
+      <property name="0">#A0A0A0</property>
+    </filter>
+    <filter id="filter17" in=":2.000000">
+      <property name="background">colour:0</property>
+      <property name="mlt_service">affine</property>
+      <property name="transition.distort">0</property>
+      <property name="transition.valign">middle</property>
+      <property name="transition.halign">center</property>
+      <property name="transition.fill">0</property>
+      <property name="transition.geometry">0/40:100%x100%</property>
+    </filter>
+    <filter id="filter18" in=":2.000000">
+      <property name="start">1</property>
+      <property name="mlt_service">brightness</property>
+      <property name="opacity">0=0;:0.200000=1</property>
+      <property name="alpha">0=0;:0.200000=1</property>
+    </filter>
+    <filter id="filter19" in=":2.000000">
+      <property name="start">1</property>
+      <property name="mlt_service">brightness</property>
+      <property name="opacity">:-0.200000=1;-1=0</property>
+      <property name="alpha">:-0.200000=1;-1=0</property>
+    </filter>
+  </playlist>
+  <producer id="producer6" in=":0.000000" out="199">
+    <property name="length">200</property>
+    <property name="eof">pause</property>
+    <property name="resource">69.144.129.52,demo.mp4</property>
+    <property name="meta.media.nb_streams">1</property>
+    <property name="meta.media.0.stream.type">video</property>
+    <property name="meta.media.0.stream.frame_rate">20</property>
+    <property name="meta.media.0.stream.sample_aspect_ratio">1</property>
+    <property name="meta.media.0.codec.width">1280</property>
+    <property name="meta.media.0.codec.height">960</property>
+    <property name="meta.media.0.codec.rotate">0</property>
+    <property name="meta.media.0.codec.frame_rate">20</property>
+    <property name="meta.media.0.codec.pix_fmt">yuvj420p</property>
+    <property name="meta.media.0.codec.sample_aspect_ratio">1</property>
+    <property name="meta.media.0.codec.colorspace">709</property>
+    <property name="meta.media.0.codec.name">h264</property>
+    <property name="meta.media.0.codec.long_name">H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10</property>
+    <property name="meta.media.0.codec.bit_rate">3350697</property>
+    <property name="meta.attr.0.stream.handler_name.markup">VideoHandler</property>
+    <property name="meta.attr.major_brand.markup">isom</property>
+    <property name="meta.attr.minor_version.markup">512</property>
+    <property name="meta.attr.compatible_brands.markup">isomiso2avc1mp41</property>
+    <property name="meta.attr.encoder.markup">Lavf57.56.101</property>
+    <property name="seekable">1</property>
+    <property name="meta.media.sample_aspect_num">1</property>
+    <property name="meta.media.sample_aspect_den">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="audio_index">-1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">1</property>
+    <property name="mlt_service">avformat</property>
+  </producer>
+  <playlist id="playlist6">
+    <blank length="50" />
+    <entry in="0" out="199" producer="producer6" />
+    <filter id="filter20" in=":2.500000">
+      <property name="version">0.3</property>
+      <property name="mlt_service">frei0r.bluescreen0r</property>
+      <property name="1">0.15</property>
+      <property name="0">#A0A0A0</property>
+    </filter>
+    <filter id="filter21" in=":2.500000">
+      <property name="background">colour:0</property>
+      <property name="mlt_service">affine</property>
+      <property name="transition.distort">0</property>
+      <property name="transition.valign">middle</property>
+      <property name="transition.halign">center</property>
+      <property name="transition.fill">0</property>
+      <property name="transition.geometry">0/50:100%x100%</property>
+    </filter>
+    <filter id="filter22" in=":2.500000">
+      <property name="start">1</property>
+      <property name="mlt_service">brightness</property>
+      <property name="opacity">0=0;:0.200000=1</property>
+      <property name="alpha">0=0;:0.200000=1</property>
+    </filter>
+    <filter id="filter23" in=":2.500000">
+      <property name="start">1</property>
+      <property name="mlt_service">brightness</property>
+      <property name="opacity">:-0.200000=1;-1=0</property>
+      <property name="alpha">:-0.200000=1;-1=0</property>
+    </filter>
+  </playlist>
+  <producer id="producer7" in=":0.000000" out="199">
+    <property name="length">200</property>
+    <property name="eof">pause</property>
+    <property name="resource">69.144.129.52,demo.mp4</property>
+    <property name="meta.media.nb_streams">1</property>
+    <property name="meta.media.0.stream.type">video</property>
+    <property name="meta.media.0.stream.frame_rate">20</property>
+    <property name="meta.media.0.stream.sample_aspect_ratio">1</property>
+    <property name="meta.media.0.codec.width">1280</property>
+    <property name="meta.media.0.codec.height">960</property>
+    <property name="meta.media.0.codec.rotate">0</property>
+    <property name="meta.media.0.codec.frame_rate">20</property>
+    <property name="meta.media.0.codec.pix_fmt">yuvj420p</property>
+    <property name="meta.media.0.codec.sample_aspect_ratio">1</property>
+    <property name="meta.media.0.codec.colorspace">709</property>
+    <property name="meta.media.0.codec.name">h264</property>
+    <property name="meta.media.0.codec.long_name">H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10</property>
+    <property name="meta.media.0.codec.bit_rate">3350697</property>
+    <property name="meta.attr.0.stream.handler_name.markup">VideoHandler</property>
+    <property name="meta.attr.major_brand.markup">isom</property>
+    <property name="meta.attr.minor_version.markup">512</property>
+    <property name="meta.attr.compatible_brands.markup">isomiso2avc1mp41</property>
+    <property name="meta.attr.encoder.markup">Lavf57.56.101</property>
+    <property name="seekable">1</property>
+    <property name="meta.media.sample_aspect_num">1</property>
+    <property name="meta.media.sample_aspect_den">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="audio_index">-1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">1</property>
+    <property name="mlt_service">avformat</property>
+  </producer>
+  <playlist id="playlist7">
+    <blank length="60" />
+    <entry in="0" out="199" producer="producer7" />
+    <filter id="filter24" in=":3.000000">
+      <property name="version">0.3</property>
+      <property name="mlt_service">frei0r.bluescreen0r</property>
+      <property name="1">0.15</property>
+      <property name="0">#A0A0A0</property>
+    </filter>
+    <filter id="filter25" in=":3.000000">
+      <property name="background">colour:0</property>
+      <property name="mlt_service">affine</property>
+      <property name="transition.distort">0</property>
+      <property name="transition.valign">middle</property>
+      <property name="transition.halign">center</property>
+      <property name="transition.fill">0</property>
+      <property name="transition.geometry">0/60:100%x100%</property>
+    </filter>
+    <filter id="filter26" in=":3.000000">
+      <property name="start">1</property>
+      <property name="mlt_service">brightness</property>
+      <property name="opacity">0=0;:0.200000=1</property>
+      <property name="alpha">0=0;:0.200000=1</property>
+    </filter>
+    <filter id="filter27" in=":3.000000">
+      <property name="start">1</property>
+      <property name="mlt_service">brightness</property>
+      <property name="opacity">:-0.200000=1;-1=0</property>
+      <property name="alpha">:-0.200000=1;-1=0</property>
+    </filter>
+  </playlist>
+  <producer id="producer8" in=":0.000000" out="199">
+    <property name="length">200</property>
+    <property name="eof">pause</property>
+    <property name="resource">69.144.129.52,demo.mp4</property>
+    <property name="meta.media.nb_streams">1</property>
+    <property name="meta.media.0.stream.type">video</property>
+    <property name="meta.media.0.stream.frame_rate">20</property>
+    <property name="meta.media.0.stream.sample_aspect_ratio">1</property>
+    <property name="meta.media.0.codec.width">1280</property>
+    <property name="meta.media.0.codec.height">960</property>
+    <property name="meta.media.0.codec.rotate">0</property>
+    <property name="meta.media.0.codec.frame_rate">20</property>
+    <property name="meta.media.0.codec.pix_fmt">yuvj420p</property>
+    <property name="meta.media.0.codec.sample_aspect_ratio">1</property>
+    <property name="meta.media.0.codec.colorspace">709</property>
+    <property name="meta.media.0.codec.name">h264</property>
+    <property name="meta.media.0.codec.long_name">H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10</property>
+    <property name="meta.media.0.codec.bit_rate">3350697</property>
+    <property name="meta.attr.0.stream.handler_name.markup">VideoHandler</property>
+    <property name="meta.attr.major_brand.markup">isom</property>
+    <property name="meta.attr.minor_version.markup">512</property>
+    <property name="meta.attr.compatible_brands.markup">isomiso2avc1mp41</property>
+    <property name="meta.attr.encoder.markup">Lavf57.56.101</property>
+    <property name="seekable">1</property>
+    <property name="meta.media.sample_aspect_num">1</property>
+    <property name="meta.media.sample_aspect_den">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="audio_index">-1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">1</property>
+    <property name="mlt_service">avformat</property>
+  </producer>
+  <playlist id="playlist8">
+    <blank length="70" />
+    <entry in="0" out="199" producer="producer8" />
+    <filter id="filter28" in=":3.500000">
+      <property name="version">0.3</property>
+      <property name="mlt_service">frei0r.bluescreen0r</property>
+      <property name="1">0.15</property>
+      <property name="0">#A0A0A0</property>
+    </filter>
+    <filter id="filter29" in=":3.500000">
+      <property name="background">colour:0</property>
+      <property name="mlt_service">affine</property>
+      <property name="transition.distort">0</property>
+      <property name="transition.valign">middle</property>
+      <property name="transition.halign">center</property>
+      <property name="transition.fill">0</property>
+      <property name="transition.geometry">0/70:100%x100%</property>
+    </filter>
+    <filter id="filter30" in=":3.500000">
+      <property name="start">1</property>
+      <property name="mlt_service">brightness</property>
+      <property name="opacity">0=0;:0.200000=1</property>
+      <property name="alpha">0=0;:0.200000=1</property>
+    </filter>
+    <filter id="filter31" in=":3.500000">
+      <property name="start">1</property>
+      <property name="mlt_service">brightness</property>
+      <property name="opacity">:-0.200000=1;-1=0</property>
+      <property name="alpha">:-0.200000=1;-1=0</property>
+    </filter>
+  </playlist>
+  <producer id="producer9" in=":0.000000" out="199">
+    <property name="length">200</property>
+    <property name="eof">pause</property>
+    <property name="resource">69.144.129.52,demo.mp4</property>
+    <property name="meta.media.nb_streams">1</property>
+    <property name="meta.media.0.stream.type">video</property>
+    <property name="meta.media.0.stream.frame_rate">20</property>
+    <property name="meta.media.0.stream.sample_aspect_ratio">1</property>
+    <property name="meta.media.0.codec.width">1280</property>
+    <property name="meta.media.0.codec.height">960</property>
+    <property name="meta.media.0.codec.rotate">0</property>
+    <property name="meta.media.0.codec.frame_rate">20</property>
+    <property name="meta.media.0.codec.pix_fmt">yuvj420p</property>
+    <property name="meta.media.0.codec.sample_aspect_ratio">1</property>
+    <property name="meta.media.0.codec.colorspace">709</property>
+    <property name="meta.media.0.codec.name">h264</property>
+    <property name="meta.media.0.codec.long_name">H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10</property>
+    <property name="meta.media.0.codec.bit_rate">3350697</property>
+    <property name="meta.attr.0.stream.handler_name.markup">VideoHandler</property>
+    <property name="meta.attr.major_brand.markup">isom</property>
+    <property name="meta.attr.minor_version.markup">512</property>
+    <property name="meta.attr.compatible_brands.markup">isomiso2avc1mp41</property>
+    <property name="meta.attr.encoder.markup">Lavf57.56.101</property>
+    <property name="seekable">1</property>
+    <property name="meta.media.sample_aspect_num">1</property>
+    <property name="meta.media.sample_aspect_den">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="audio_index">-1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">1</property>
+    <property name="mlt_service">avformat</property>
+  </producer>
+  <playlist id="playlist9">
+    <blank length="80" />
+    <entry in="0" out="199" producer="producer9" />
+    <filter id="filter32" in=":4.000000">
+      <property name="version">0.3</property>
+      <property name="mlt_service">frei0r.bluescreen0r</property>
+      <property name="1">0.15</property>
+      <property name="0">#A0A0A0</property>
+    </filter>
+    <filter id="filter33" in=":4.000000">
+      <property name="background">colour:0</property>
+      <property name="mlt_service">affine</property>
+      <property name="transition.distort">0</property>
+      <property name="transition.valign">middle</property>
+      <property name="transition.halign">center</property>
+      <property name="transition.fill">0</property>
+      <property name="transition.geometry">0/80:100%x100%</property>
+    </filter>
+    <filter id="filter34" in=":4.000000">
+      <property name="start">1</property>
+      <property name="mlt_service">brightness</property>
+      <property name="opacity">0=0;:0.200000=1</property>
+      <property name="alpha">0=0;:0.200000=1</property>
+    </filter>
+    <filter id="filter35" in=":4.000000">
+      <property name="start">1</property>
+      <property name="mlt_service">brightness</property>
+      <property name="opacity">:-0.200000=1;-1=0</property>
+      <property name="alpha">:-0.200000=1;-1=0</property>
+    </filter>
+  </playlist>
+  <producer id="producer10" in=":0.000000" out="199">
+    <property name="length">200</property>
+    <property name="eof">pause</property>
+    <property name="resource">69.144.129.52,demo.mp4</property>
+    <property name="meta.media.nb_streams">1</property>
+    <property name="meta.media.0.stream.type">video</property>
+    <property name="meta.media.0.stream.frame_rate">20</property>
+    <property name="meta.media.0.stream.sample_aspect_ratio">1</property>
+    <property name="meta.media.0.codec.width">1280</property>
+    <property name="meta.media.0.codec.height">960</property>
+    <property name="meta.media.0.codec.rotate">0</property>
+    <property name="meta.media.0.codec.frame_rate">20</property>
+    <property name="meta.media.0.codec.pix_fmt">yuvj420p</property>
+    <property name="meta.media.0.codec.sample_aspect_ratio">1</property>
+    <property name="meta.media.0.codec.colorspace">709</property>
+    <property name="meta.media.0.codec.name">h264</property>
+    <property name="meta.media.0.codec.long_name">H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10</property>
+    <property name="meta.media.0.codec.bit_rate">3350697</property>
+    <property name="meta.attr.0.stream.handler_name.markup">VideoHandler</property>
+    <property name="meta.attr.major_brand.markup">isom</property>
+    <property name="meta.attr.minor_version.markup">512</property>
+    <property name="meta.attr.compatible_brands.markup">isomiso2avc1mp41</property>
+    <property name="meta.attr.encoder.markup">Lavf57.56.101</property>
+    <property name="seekable">1</property>
+    <property name="meta.media.sample_aspect_num">1</property>
+    <property name="meta.media.sample_aspect_den">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="audio_index">-1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">1</property>
+    <property name="mlt_service">avformat</property>
+  </producer>
+  <playlist id="playlist10">
+    <blank length="90" />
+    <entry in="0" out="199" producer="producer10" />
+    <filter id="filter36" in=":4.500000">
+      <property name="version">0.3</property>
+      <property name="mlt_service">frei0r.bluescreen0r</property>
+      <property name="1">0.15</property>
+      <property name="0">#A0A0A0</property>
+    </filter>
+    <filter id="filter37" in=":4.500000">
+      <property name="background">colour:0</property>
+      <property name="mlt_service">affine</property>
+      <property name="transition.distort">0</property>
+      <property name="transition.valign">middle</property>
+      <property name="transition.halign">center</property>
+      <property name="transition.fill">0</property>
+      <property name="transition.geometry">0/90:100%x100%</property>
+    </filter>
+    <filter id="filter38" in=":4.500000">
+      <property name="start">1</property>
+      <property name="mlt_service">brightness</property>
+      <property name="opacity">0=0;:0.200000=1</property>
+      <property name="alpha">0=0;:0.200000=1</property>
+    </filter>
+    <filter id="filter39" in=":4.500000">
+      <property name="start">1</property>
+      <property name="mlt_service">brightness</property>
+      <property name="opacity">:-0.200000=1;-1=0</property>
+      <property name="alpha">:-0.200000=1;-1=0</property>
+    </filter>
+  </playlist>
+  <tractor global_feed="1" id="tractor0" in="0" out="289" title="color:#fc8274">
+    <track producer="playlist0" />
+    <track producer="playlist1" />
+    <track producer="playlist2" />
+    <track producer="playlist3" />
+    <track producer="playlist4" />
+    <track producer="playlist5" />
+    <track producer="playlist6" />
+    <track producer="playlist7" />
+    <track producer="playlist8" />
+    <track producer="playlist9" />
+    <track producer="playlist10" />
+    <transition id="transition0">
+      <property name="a_track">0</property>
+      <property name="b_track">1</property>
+      <property name="start">0/0:100%x100%</property>
+      <property name="factory">loader</property>
+      <property name="aligned">1</property>
+      <property name="progressive">1</property>
+      <property name="mlt_service">composite</property>
+      <property name="distort">1</property>
+    </transition>
+    <transition id="transition1">
+      <property name="a_track">0</property>
+      <property name="b_track">1</property>
+      <property name="mlt_service">mix</property>
+    </transition>
+    <transition id="transition2">
+      <property name="a_track">0</property>
+      <property name="b_track">2</property>
+      <property name="start">0/0:100%x100%</property>
+      <property name="factory">loader</property>
+      <property name="aligned">1</property>
+      <property name="progressive">1</property>
+      <property name="mlt_service">composite</property>
+      <property name="distort">1</property>
+    </transition>
+    <transition id="transition3">
+      <property name="a_track">0</property>
+      <property name="b_track">2</property>
+      <property name="mlt_service">mix</property>
+    </transition>
+    <transition id="transition4">
+      <property name="a_track">0</property>
+      <property name="b_track">3</property>
+      <property name="start">0/0:100%x100%</property>
+      <property name="factory">loader</property>
+      <property name="aligned">1</property>
+      <property name="progressive">1</property>
+      <property name="mlt_service">composite</property>
+      <property name="distort">1</property>
+    </transition>
+    <transition id="transition5">
+      <property name="a_track">0</property>
+      <property name="b_track">3</property>
+      <property name="mlt_service">mix</property>
+    </transition>
+    <transition id="transition6">
+      <property name="a_track">0</property>
+      <property name="b_track">4</property>
+      <property name="start">0/0:100%x100%</property>
+      <property name="factory">loader</property>
+      <property name="aligned">1</property>
+      <property name="progressive">1</property>
+      <property name="mlt_service">composite</property>
+      <property name="distort">1</property>
+    </transition>
+    <transition id="transition7">
+      <property name="a_track">0</property>
+      <property name="b_track">4</property>
+      <property name="mlt_service">mix</property>
+    </transition>
+    <transition id="transition8">
+      <property name="a_track">0</property>
+      <property name="b_track">5</property>
+      <property name="start">0/0:100%x100%</property>
+      <property name="factory">loader</property>
+      <property name="aligned">1</property>
+      <property name="progressive">1</property>
+      <property name="mlt_service">composite</property>
+      <property name="distort">1</property>
+    </transition>
+    <transition id="transition9">
+      <property name="a_track">0</property>
+      <property name="b_track">5</property>
+      <property name="mlt_service">mix</property>
+    </transition>
+    <transition id="transition10">
+      <property name="a_track">0</property>
+      <property name="b_track">6</property>
+      <property name="start">0/0:100%x100%</property>
+      <property name="factory">loader</property>
+      <property name="aligned">1</property>
+      <property name="progressive">1</property>
+      <property name="mlt_service">composite</property>
+      <property name="distort">1</property>
+    </transition>
+    <transition id="transition11">
+      <property name="a_track">0</property>
+      <property name="b_track">6</property>
+      <property name="mlt_service">mix</property>
+    </transition>
+    <transition id="transition12">
+      <property name="a_track">0</property>
+      <property name="b_track">7</property>
+      <property name="start">0/0:100%x100%</property>
+      <property name="factory">loader</property>
+      <property name="aligned">1</property>
+      <property name="progressive">1</property>
+      <property name="mlt_service">composite</property>
+      <property name="distort">1</property>
+    </transition>
+    <transition id="transition13">
+      <property name="a_track">0</property>
+      <property name="b_track">7</property>
+      <property name="mlt_service">mix</property>
+    </transition>
+    <transition id="transition14">
+      <property name="a_track">0</property>
+      <property name="b_track">8</property>
+      <property name="start">0/0:100%x100%</property>
+      <property name="factory">loader</property>
+      <property name="aligned">1</property>
+      <property name="progressive">1</property>
+      <property name="mlt_service">composite</property>
+      <property name="distort">1</property>
+    </transition>
+    <transition id="transition15">
+      <property name="a_track">0</property>
+      <property name="b_track">8</property>
+      <property name="mlt_service">mix</property>
+    </transition>
+    <transition id="transition16">
+      <property name="a_track">0</property>
+      <property name="b_track">9</property>
+      <property name="start">0/0:100%x100%</property>
+      <property name="factory">loader</property>
+      <property name="aligned">1</property>
+      <property name="progressive">1</property>
+      <property name="mlt_service">composite</property>
+      <property name="distort">1</property>
+    </transition>
+    <transition id="transition17">
+      <property name="a_track">0</property>
+      <property name="b_track">9</property>
+      <property name="mlt_service">mix</property>
+    </transition>
+    <transition id="transition18">
+      <property name="a_track">0</property>
+      <property name="b_track">10</property>
+      <property name="start">0/0:100%x100%</property>
+      <property name="factory">loader</property>
+      <property name="aligned">1</property>
+      <property name="progressive">1</property>
+      <property name="mlt_service">composite</property>
+      <property name="distort">1</property>
+    </transition>
+    <transition id="transition19">
+      <property name="a_track">0</property>
+      <property name="b_track">10</property>
+      <property name="mlt_service">mix</property>
+    </transition>
+  </tractor>
+</mlt>

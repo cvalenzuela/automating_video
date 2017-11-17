@@ -1,0 +1,88 @@
+<mlt LC_NUMERIC="en_US.UTF-8" title="color:#ff0000" version="6.5.0">
+  <profile colorspace="601" description="DV/DVD PAL" display_aspect_den="700" display_aspect_num="1200" frame_rate_den="1" frame_rate_num="25" height="700" progressive="0" sample_aspect_den="15" sample_aspect_num="16" width="1200" />
+  <producer id="producer0" in="0" out="14999">
+    <property name="eof">pause</property>
+    <property name="resource">#ff0000</property>
+    <property name="aspect_ratio">1.06667</property>
+    <property name="mlt_service">color</property>
+  </producer>
+  <playlist id="playlist0">
+    <entry in="0" out="14999" producer="producer0" />
+  </playlist>
+  <producer id="producer1" in=":0.000000" out="14999">
+    <property name="length">15000</property>
+    <property name="eof">pause</property>
+    <property name="resource">02.jpg</property>
+    <property name="ttl">25</property>
+    <property name="aspect_ratio">1</property>
+    <property name="progressive">1</property>
+    <property name="seekable">1</property>
+    <property name="meta.media.width">4013</property>
+    <property name="meta.media.height">2675</property>
+    <property name="mlt_service">qimage</property>
+  </producer>
+  <playlist id="playlist1">
+    <entry in="0" out="14999" producer="producer1" />
+  </playlist>
+  <producer id="producer2" in=":0.000000" out="14999">
+    <property name="length">15000</property>
+    <property name="eof">pause</property>
+    <property name="resource">#00000000</property>
+    <property name="aspect_ratio">1.06667</property>
+    <property name="mlt_service">color</property>
+  </producer>
+  <playlist id="playlist2">
+    <entry in="0" out="14999" producer="producer2" />
+    <filter id="filter0">
+      <property name="argument">SLAVE, PATRICIAN AND PLEBEIAN, LORD AND SERF,</property>
+      <property name="geometry">0/0:100%x100%</property>
+      <property name="family">Sans</property>
+      <property name="size">1080</property>
+      <property name="weight">400</property>
+      <property name="style">normal</property>
+      <property name="fgcolour">#ffffff</property>
+      <property name="bgcolour">0x00000000</property>
+      <property name="olcolour">#000000</property>
+      <property name="pad">0</property>
+      <property name="halign">center</property>
+      <property name="valign">middle</property>
+      <property name="outline">10</property>
+      <property name="mlt_service">dynamictext</property>
+    </filter>
+  </playlist>
+  <tractor global_feed="1" id="tractor0" in="0" out="14999" title="color:#ff0000">
+    <track producer="playlist0" />
+    <track producer="playlist1" />
+    <track producer="playlist2" />
+    <transition id="transition0">
+      <property name="a_track">0</property>
+      <property name="b_track">1</property>
+      <property name="start">0/0:100%x100%</property>
+      <property name="factory">loader</property>
+      <property name="aligned">1</property>
+      <property name="progressive">1</property>
+      <property name="mlt_service">composite</property>
+      <property name="distort">1</property>
+    </transition>
+    <transition id="transition1">
+      <property name="a_track">0</property>
+      <property name="b_track">1</property>
+      <property name="mlt_service">mix</property>
+    </transition>
+    <transition id="transition2">
+      <property name="a_track">0</property>
+      <property name="b_track">2</property>
+      <property name="start">0/0:100%x100%</property>
+      <property name="factory">loader</property>
+      <property name="aligned">1</property>
+      <property name="progressive">1</property>
+      <property name="mlt_service">composite</property>
+      <property name="distort">1</property>
+    </transition>
+    <transition id="transition3">
+      <property name="a_track">0</property>
+      <property name="b_track">2</property>
+      <property name="mlt_service">mix</property>
+    </transition>
+  </tractor>
+</mlt>
